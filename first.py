@@ -22,7 +22,6 @@ def streamlit_app():
       file_path = tmp_file.name  # Get the full path of the temporary file
     st.success(f"Successfully uploaded '{file_details}'")
     st.session_state['file_details']=file_details
-    st.write(file_path)
     display_java_code(file_path,API_KEY)
 
 
@@ -31,7 +30,8 @@ def streamlit_app():
 
 def display_java_code(file_path,API_KEY):
   """Displays the contents of the selected Java file."""
-  path = ".\\Animation - 1717139221779.json"
+  # path = ".\\Animation - 1717139221779.json"
+  path = "JAVA-PY-code-converter\\Animation - 1717139221779.json"
   with open(path,"r") as file: 
     url = json.load(file) 
   try:
