@@ -1,3 +1,4 @@
+!pip install google-generativeai
 import google.generativeai as genai
 
 # GOOGLE_API_KEY= <API Key>
