@@ -5,6 +5,7 @@ import json
 from streamlit_lottie import st_lottie 
 import time
 import os
+from pathlib import Path
 
 st.session_state['file_details']=''
 def streamlit_app():
@@ -33,6 +34,8 @@ def display_java_code(file_path,API_KEY):
   """Displays the contents of the selected Java file."""
   # path = ".\\Animation - 1717139221779.json"
   path = "JAVA-PY-code-converter/Animation - 1717139221779.json"
+  path = Path("JAVA-PY-code-converter") / "Animation - 1717139221779.json"
+  st.write(path.exists())
   # st.write(os.path.exists(path))
   # with open(path,"r") as file: 
   #   url = json.load(file) 
