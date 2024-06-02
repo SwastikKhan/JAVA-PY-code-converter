@@ -77,7 +77,7 @@ def display_java_code(file_path,API_KEY):
 def download_code(code):
 
   button_clicked = st.download_button(
-      label="Download Code",
+      label="Download Code🔗",
       data=code,
       file_name=st.session_state['file_details'].replace(".java",".py"), 
       mime="text/python",
