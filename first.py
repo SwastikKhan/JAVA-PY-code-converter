@@ -4,8 +4,8 @@ from gemini import get_response_from_model
 import json
 from streamlit_lottie import st_lottie 
 import time
-import os
-from pathlib import Path
+# import os
+# from pathlib import Path
 
 st.session_state['file_details']=''
 def streamlit_app():
@@ -33,12 +33,13 @@ def streamlit_app():
 def display_java_code(file_path,API_KEY):
   """Displays the contents of the selected Java file."""
   # path = ".\\Animation - 1717139221779.json"
-  path = "JAVA-PY-code-converter/Animation - 1717139221779.json"
-  path = Path("JAVA-PY-code-converter") / "Animation - 1717139221779.json"
-  st.write(path.exists())
+  # path = "JAVA-PY-code-converter/Animation - 1717139221779.json"
+  # path = Path("JAVA-PY-code-converter") / "Animation - 1717139221779.json"
+  # st.write(path.exists())
   # st.write(os.path.exists(path))
   # with open(path,"r") as file: 
   #   url = json.load(file) 
+  url = "https://lottie.host/0d101b00-8268-4284-ab5e-159a701355d3/3T30KL4l9w.json"
   try:
     with open(file_path, 'r') as java_file:
       java_code = java_file.read()
@@ -47,20 +48,20 @@ def display_java_code(file_path,API_KEY):
       if st.button('Generate'):
         F=0
         output=""
-        with st.spinner("Generating code"):
-        # with st.empty():
-        #   col1,col2,col3=st.columns([1,1,1])
-        #   with col2:
-        #     st_lottie(url, 
-        #       reverse=True, 
-        #       height=150, 
-        #       width=150, 
-        #       speed=1, 
-        #       loop=True, 
-        #       quality='high', 
-        #       key='Loader'
-        #     )
-        #   time.sleep(1)
+        # with st.spinner("Generating code"):
+        with st.empty():
+          col1,col2,col3=st.columns([1,1,1])
+          with col2:
+            st_lottie(url, 
+              reverse=True, 
+              height=150, 
+              width=150, 
+              speed=1, 
+              loop=True, 
+              quality='high', 
+              key='Loader'
+            )
+          time.sleep(1)
           output=get_response_from_model(java_code,API_KEY)
           st.success("Generated Code Successfully.")
           F=1
