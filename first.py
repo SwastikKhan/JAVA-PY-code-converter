@@ -22,6 +22,7 @@ def streamlit_app():
       file_path = tmp_file.name  # Get the full path of the temporary file
     st.success(f"Successfully uploaded '{file_details}'")
     st.session_state['file_details']=file_details
+    st.write(file_path)
     display_java_code(file_path,API_KEY)
 
 
