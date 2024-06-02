@@ -33,6 +33,7 @@ def display_java_code(file_path,API_KEY):
   """Displays the contents of the selected Java file."""
   # path = ".\\Animation - 1717139221779.json"
   path = "JAVA-PY-code-converter/Animation - 1717139221779.json"
+  path = os.path.abspath(path)
   st.write(os.path.exists(path))
   with open(path,"r") as file: 
     url = json.load(file) 
