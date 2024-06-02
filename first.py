@@ -43,8 +43,8 @@ def display_java_code(file_path,API_KEY):
         st.code(java_code,language="java")  # Highlight as Java code
       if st.button('Generate'):
         F=0
-        with st.spinner("Generating code"):
         output=""
+        with st.spinner("Generating code"):
         # with st.empty():
         #   col1,col2,col3=st.columns([1,1,1])
         #   with col2:
