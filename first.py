@@ -1,4 +1,3 @@
-pip install streamlit-lottie
 import streamlit as st
 import tempfile
 from gemini import get_response_from_model
