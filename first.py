@@ -33,10 +33,9 @@ def display_java_code(file_path,API_KEY):
   """Displays the contents of the selected Java file."""
   # path = ".\\Animation - 1717139221779.json"
   path = "JAVA-PY-code-converter/Animation - 1717139221779.json"
-  path = os.path.abspath(path)
-  st.write(os.path.exists(path))
-  with open(path,"r") as file: 
-    url = json.load(file) 
+  # st.write(os.path.exists(path))
+  # with open(path,"r") as file: 
+  #   url = json.load(file) 
   try:
     with open(file_path, 'r') as java_file:
       java_code = java_file.read()
@@ -44,21 +43,21 @@ def display_java_code(file_path,API_KEY):
         st.code(java_code,language="java")  # Highlight as Java code
       if st.button('Generate'):
         F=0
-        # with st.spinner("Generating code"):
+        with st.spinner("Generating code"):
         output=""
-        with st.empty():
-          col1,col2,col3=st.columns([1,1,1])
-          with col2:
-            st_lottie(url, 
-              reverse=True, 
-              height=150, 
-              width=150, 
-              speed=1, 
-              loop=True, 
-              quality='high', 
-              key='Loader'
-            )
-          time.sleep(1)
+        # with st.empty():
+        #   col1,col2,col3=st.columns([1,1,1])
+        #   with col2:
+        #     st_lottie(url, 
+        #       reverse=True, 
+        #       height=150, 
+        #       width=150, 
+        #       speed=1, 
+        #       loop=True, 
+        #       quality='high', 
+        #       key='Loader'
+        #     )
+        #   time.sleep(1)
           output=get_response_from_model(java_code,API_KEY)
           st.success("Generated Code Successfully.")
           F=1
