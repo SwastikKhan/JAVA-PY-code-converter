@@ -13,7 +13,7 @@ def streamlit_app():
   with st.sidebar:
     API_KEY=st.text_input("Gemini API Key", key="gemini_api_key", type="password")
   
-  st.title(":rainbow[Code Converter]")  # Display a heading
+  st.title("📑:rainbow[Java-Python Code Converter]")  # Display a heading
   uploaded_file = st.file_uploader("Choose a Java file (.java)", type='java')
 
   if uploaded_file is not None:
