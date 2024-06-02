@@ -14,6 +14,8 @@ def streamlit_app():
     API_KEY=st.text_input("Gemini API Key", key="gemini_api_key", type="password")
   
   st.title("📑:rainbow[Java-Python Code Converter]")  # Display a heading
+  if API_KEY == "":
+    st.warning("Please insert your Gemini API Key in the sidebar before Converting.")
   uploaded_file = st.file_uploader("Choose a Java file (.java)", type='java')
 
   if uploaded_file is not None:
@@ -45,7 +47,7 @@ def display_java_code(file_path,API_KEY):
       java_code = java_file.read()
       if st.checkbox(":blue[View Input Code]"):
         st.code(java_code,language="java")  # Highlight as Java code
-      if st.button('Generate'):
+      if st.button('Convert'):
         F=0
         output=""
         # with st.spinner("Generating code"):
