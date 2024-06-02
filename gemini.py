@@ -1,6 +1,6 @@
 import google.generativeai as genai
 
-# GOOGLE_API_KEY='AIzaSyDgpuL7DiGfVMuR5zBykj61pr1VRAkVoD4'
+# GOOGLE_API_KEY= <API Key>
 # genai.configure(api_key=GOOGLE_API_KEY)
 
 def get_response_from_model(code, API_KEY):
