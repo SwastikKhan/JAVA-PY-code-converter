@@ -12,6 +12,7 @@ def streamlit_app():
   API_KEY=""
   with st.sidebar:
     API_KEY=st.text_input("Gemini API Key", key="gemini_api_key", type="password")
+    st.markdown("[Click here to get API key](https://cloud.google.com/generative-ai-studio)")
   
   st.title("📑:rainbow[Java-Python Code Converter]")  # Display a heading
   if API_KEY == "":
